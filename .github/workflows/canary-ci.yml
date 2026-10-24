@@ -1,0 +1,12 @@
+name: canary-ci
+on:
+  push:
+    branches: ["canary/**"]
+    paths: ["ci/**"]
+  pull_request:
+    paths: ["ci/**"]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo canary

@@ -1,0 +1,17 @@
+name: canary-dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        type: boolean
+        default: true
+      sleep:
+        type: string
+        default: "0"
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      SLEEP: ${{ inputs.sleep }}
+    steps:
+      - run: sleep "$SLEEP"

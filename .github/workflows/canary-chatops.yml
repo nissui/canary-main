@@ -1,0 +1,10 @@
+name: canary-chatops
+on:
+  issue_comment:
+    types: [created]
+jobs:
+  ping:
+    if: contains(github.event.comment.body, '/canary-ping')
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ping
